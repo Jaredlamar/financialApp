@@ -24,9 +24,9 @@ function App() {
            "Content-Type": "application/json",
            Accept: "application/json"
        },
-       body: JSON.stringify({
+       body: JSON.stringify(
            formdata
-       })
+       )
    })
    .then( res => res.json())
    .then( data => setSavings([...savings,data]))
@@ -34,6 +34,7 @@ function App() {
 
   }
 
+  
 
   return (
   <div>

@@ -2,7 +2,7 @@
   "user": [
     {
       "id": 1,
-      "date": "mm/dd/yyyy",
+      "date": "yyyy-mm-dd",
       "username": "",
       "income": "",
       "rent": 0,
@@ -52,6 +52,33 @@
         "savings": "200"
       },
       "id": 5
+    },
+    {
+      "date": "2022-03-22",
+      "username": "tin ",
+      "income": "5000",
+      "rent": "200",
+      "expenses": "300",
+      "savings": "300",
+      "id": 6
+    },
+    {
+      "date": "2022-03-22",
+      "username": "love ",
+      "income": "3000",
+      "rent": "2000",
+      "expenses": "3000",
+      "savings": "3000",
+      "id": 7
+    },
+    {
+      "date": "2022-03-22",
+      "username": "love ",
+      "income": "3000",
+      "rent": "2000",
+      "expenses": "3000",
+      "savings": "3000",
+      "id": 8
     }
   ]
 }

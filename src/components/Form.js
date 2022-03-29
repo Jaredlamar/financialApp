@@ -1,9 +1,10 @@
 import React,{useState}from 'react'
+import PieChart from './PieChart'
 
 
 function Form({postData}) {
     const[formData,SetFormData]=useState({
-        date:"mm-dd-yyyy",
+        date:"yyyy-mm-dd",
         username:"",
         income:0,
         rent:0,
@@ -32,11 +33,12 @@ function Form({postData}) {
             <input onChange={handleChange} type="date" name ="date" placeholder="date" value={date}></input>
             <input onChange={handleChange} type="text" name ="username" placeholder="username" value={username}></input>
             <input onChange={handleChange} type="number" name ="income" placeholder="income" value={income}></input>
-            <input onChange={handleChange} type="number" name ="rent" placeholder="Rent" value={rent}></input>
-            <input onChange={handleChange} type="number" name ="expenses" placeholder="Expenses" value={expenses}></input>
-            <input onChange={handleChange} type="number" name ="savings" placeholder="Savings" value={savings}></input>
+            <input onChange={handleChange} type="number" name ="rent" placeholder="rent" value={rent}></input>
+            <input onChange={handleChange} type="number" name ="expenses" placeholder="expenses" value={expenses}></input>
+            <input onChange={handleChange} type="number" name ="savings" placeholder="savings" value={savings}></input>
             <input type="submit" value="Submit" />
         </form>
+        <PieChart formData={formData} />
     </div>
   )
 }
