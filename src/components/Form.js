@@ -1,5 +1,11 @@
 import React,{useState}from 'react'
 import PieChart from './PieChart'
+import Container from '@mui/material/Container'
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 
 function Form({postData}) {
@@ -26,20 +32,24 @@ function Form({postData}) {
     function handleSubmit(e){
         e.preventDefault()
         postData(formData)
+        Stack.reset()
     }
+    const [value, setValue] = React.useState(null);
   return (
-    <div>
-        <form onSubmit={handleSubmit} className="new-saving-form">
+    <Container>
+        <Paper sx={{ width: '100', padding: 1, }}>
+        <Stack spacing={2} onSubmit={handleSubmit} className="new-saving-form">
             <input onChange={handleChange} type="date" name ="date" placeholder="date" value={date}></input>
-            <input onChange={handleChange} type="text" name ="username" placeholder="username" value={username}></input>
-            <input onChange={handleChange} type="number" name ="income" placeholder="income" value={income}></input>
-            <input onChange={handleChange} type="number" name ="rent" placeholder="rent" value={rent}></input>
-            <input onChange={handleChange} type="number" name ="expenses" placeholder="expenses" value={expenses}></input>
-            <input onChange={handleChange} type="number" name ="savings" placeholder="savings" value={savings}></input>
-            <input type="submit" value="Submit" />
-        </form>
+            <TextField id="outlined-basic" label="Username" variant="outlined" onChange={handleChange}name ="username" value={username}/>
+            <TextField id="outlined-number" label="Income" type="number" InputLabelProps={{shrink: true,}} onChange={handleChange} name ="income" value={income}/>
+            <TextField id="outlined-number" label="Expenses" type="number" InputLabelProps={{shrink: true,}} onChange={handleChange} name ="expenses" value={expenses}/>
+            <TextField id="outlined-number" label="Rent" type="number" InputLabelProps={{shrink: true,}} onChange={handleChange} name ="rent" value={rent}/>
+            <TextField id="outlined-number" label="Savings" type="number" InputLabelProps={{shrink: true,}} onChange={handleChange} name ="savings" value={savings}/>
+            <Button type="submit" value="submit" variant="contained">Submit</Button>
+        </Stack>
+        </Paper>
         <PieChart formData={formData} />
-    </div>
+    </Container>
   )
 }
 

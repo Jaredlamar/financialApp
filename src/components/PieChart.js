@@ -1,7 +1,7 @@
 import React from 'react'
 import {Pie} from "react-chartjs-2"
-import {Chart, ArcElement} from 'chart.js'
-Chart.register(ArcElement);
+import {Chart, ArcElement,Tooltip,Title,Legend} from 'chart.js'
+Chart.register(ArcElement,Tooltip,Title,Legend);
 
 function PieChart({formData}) {
 
@@ -11,7 +11,6 @@ function PieChart({formData}) {
         labels: ['income','rent','expenses','savings'],
         datasets: [
           {
-            label: 'Rainfall',
             backgroundColor: [
               '#B21F00',
               '#C9DE00',
@@ -30,15 +29,15 @@ function PieChart({formData}) {
           }
         ]
       }
+      
 
   return (
-    <div>
-    <Pie
+    <div style={{width:"20%", height:"20%", position:"fixed", left:"40%"}}>
+    <Pie 
       data={state}
       options={{
         title:{
           display:true,
-          text:'Average Rainfall per month',
           fontSize:20
         },
         legend:{
